@@ -1,0 +1,83 @@
+body {
+    background-color: black;
+}
+h1 {
+    color: black;
+    font-family: courier;
+    font-size: 20%;
+}
+p {
+    color: white;
+}
+video{ /*added dot*/
+  width:100%;
+  height: auto;
+
+}
+
+#alert{
+	background-color: #514E61;
+            color: #FFFFFF;
+             position: fixed;
+            width: 250px;
+            left: 50%;
+}
+
+#tarun{
+	width:500px;
+
+}
+#tarun.hover{
+	width:110%;
+}
+.div{
+	background-color: black;
+}
+
+img {
+	max-width: 1920px;
+	max-height: 720px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+#btn_real {
+    position: fixed;
+	  margin-top: 20px;
+    margin-left: 32%;
+    display:inline-block; 
+  	line-height: 60px;
+  	font-weight: bold;
+  	padding: 0 40px;
+  	background: white;
+  	border: none;
+    width:600px
+    height:600px;
+    font-size: 25px;
+}
+
+#btn_fake {
+    position: fixed;
+    margin-top: 20px;
+    margin-left:55%;
+    display: block;
+    line-height: 60px;
+    font-weight: bold;
+    padding: 0 40px;
+    background: white;
+    border: none;
+    width:600px
+    height:600px;
+    font-size: 25px;
+}
+
+
+#btn_fake:hover{
+  background: yellow;
+}
+
+#btn_real:hover{
+  background: yellow;
+}
