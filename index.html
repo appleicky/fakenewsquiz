@@ -1,0 +1,314 @@
+<html>
+	<head>
+		<title>The Fake News Bot</title>
+		<link rel="stylesheet" href="fakenewsbotcss.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<script>
+			$( document ).ready(function() {
+                console.log( "ready!" );
+                alert("If you're seeing this mesage. \n\nYou have been exposed to Fake News.");
+                
+                var name = prompt("Enter your real name", "Donald Musk The Second");
+                
+                alert("Honestly " +name+", it doesn't matter what your name is.");
+
+            //intro video loads here - 3-5 seconds//
+            //a few fake clips ending with text that says Identify the fake news from the real
+
+            //var x = document.createElement("VIDEO");
+            
+           // if (x.canPlayType("video/mp4")) {
+             //x.setAttribute("src","video.mp4");
+             //} else {
+             //alert("error playing video");
+             //}
+            //x.setAttribute("width", "100%");
+            //x.setAttribute("height", "100%");
+            //x.setAttribute("autoplay","true");
+            //document.body.appendChild(x);
+            //$('video').on('ended',function(){
+    		 //console.log('Video has ended!');
+    		 //x.remove();
+
+
+            alert("(The Rules)\n\n Identify the FAKE from the REAL news.\n\n IT DOESN'T MATTER WHO SAID IT. IT'S WHAT THEY SAID YOU'RE EVALUATING.\n\n You have one minute.");
+
+            var x = document.createElement("VIDEO");
+            
+            if (x.canPlayType("video/mp4")) { 
+             x.setAttribute("src","intro.mp4");
+             } else {
+             alert("error playing video");
+             }
+
+            x.setAttribute("autoplay","true");
+            document.body.appendChild(x);
+            $('video').on('ended',function(){
+        		 console.log('Video has ended!');
+        		 x.remove();
+
+                // Begin   
+                // first
+                // QUESTION
+                console.log("are you entering this area?");
+            	 var image1 = document.createElement("img");
+        		 image1.src = "obama.jpg";
+        		 document.body.appendChild(image1);
+
+        		 var fakebtn = document.createElement("button");
+        		 fakebtn.innerHTML = "FAKE";
+                 fakebtn.setAttribute("id", "btn_fake");
+                 
+                 var realbtn = document.createElement("button");
+                 realbtn.setAttribute("id", "btn_real");
+                 realbtn.innerHTML = "REAL";
+
+            	 var body = document.getElementsByTagName("body")[0];
+            	 body.appendChild(fakebtn);
+                 body.appendChild(realbtn);
+                 console.log('button 2 is here!');
+                
+       
+        		 fakebtn.addEventListener ("click", function() { //once the right answer to Q1 is clicked, in this case its the fakebtn//
+                     body.removeChild(image1);
+                     body.removeChild(fakebtn);
+                     body.removeChild(realbtn);
+                    
+                    var correct = document.createElement("VIDEO"); //this video plays to say "hey you got this right!"//
+                        if (correct.canPlayType("video/mp4")) {
+                             correct.setAttribute("src","nextq.mp4");
+                             correct.setAttribute("autoplay","true");
+                             document.body.appendChild(correct);
+                             $('video').on('ended',function(){
+                                 console.log('Video has ended!');
+                                 correct.remove();
+                                var image2 = document.createElement("img"); //then displays the next question (q2)//
+                                image2.src = "gordonramsay.jpg";
+                                document.body.appendChild(image2);
+                                body.appendChild(fakebtn);
+                                body.appendChild(realbtn);
+
+                                realbtn.addEventListener ("click", function() {
+                                        exitGame(body, image2, fakebtn, realbtn)
+
+                                })
+
+
+
+                                //When you copy this time of thing, don't forget to end with })
+                                fakebtn.addEventListener ("click", function() {
+                                        // If this is clicked user got right answer continue 
+
+
+                                        // Start Copy of game functionality 
+                                         body.removeChild(image2);
+                                         body.removeChild(fakebtn);
+                                         body.removeChild(realbtn);
+                    
+                                var correct = document.createElement("VIDEO"); //this video plays to say "hey you got this right!"//
+                                    if (correct.canPlayType("video/mp4")) {
+                                         correct.setAttribute("src","nextq.mp4");
+                                         correct.setAttribute("autoplay","true");
+                                         document.body.appendChild(correct);
+                                            
+                                        $('video').on('ended',function(){
+                                         console.log('Video has ended!');
+                                         correct.remove();
+                                        var image3 = document.createElement("img"); //then displays the next question (q2)//
+                                        image3.src = "bernie.jpg";
+                                        document.body.appendChild(image3);
+                                        body.appendChild(fakebtn);
+                                        body.appendChild(realbtn);
+
+
+                                //END COPY
+
+                                        realbtn.addEventListener ("click", function() {
+                                                exitGame(body, image3, fakebtn, realbtn)
+                                                //exitgame
+
+
+                                        })
+                                          fakebtn.addEventListener ("click", function() {
+                                                 body.removeChild(image3);
+                                                 body.removeChild(fakebtn);
+                                                 body.removeChild(realbtn);
+
+                                        var correct = document.createElement("VIDEO"); //this video plays to say "hey you got this right!"//
+                                        if (correct.canPlayType("video/mp4")) {
+                                             correct.setAttribute("src","nextq.mp4");
+                                             correct.setAttribute("autoplay","true");
+                                             document.body.appendChild(correct);
+                                                
+                                            $('video').on('ended',function(){
+                                            console.log('Video has ended!');
+                                            correct.remove();
+
+                                            var image4 = document.createElement("img"); //then displays the next question (q2)//
+                                                image4.src = "beer.jpg";
+                                                document.body.appendChild(image4);
+                                                body.appendChild(fakebtn);
+                                                body.appendChild(realbtn);
+
+
+                                                fakebtn.addEventListener ("click", function() {
+                                                    exitGame(body, image4, fakebtn, realbtn)
+                                                //exitgame
+                                                })
+
+
+                                                realbtn.addEventListener ("click", function() {
+                                                 body.removeChild(image4);
+                                                 body.removeChild(fakebtn);
+                                                 body.removeChild(realbtn);
+                                                 alert("RIGHT ANSWER")
+
+                                                // if (correct.canPlayType("video/mp4")) {
+                                                //      correct.setAttribute("src","correct.mp4");
+                                                //      correct.setAttribute("autoplay","true");
+                                                //      document.body.appendChild(correct);
+
+                                                //      $('video').on('ended',function(){
+                                                //         console.log('Video has ended!');
+                                                //         correct.remove();
+                                                //     })
+                                                     
+
+                                                //             var image5 = document.createElement("img"); //then displays the next question (q2)//
+                                                //                 image5.src = "trumpcbs.png";
+                                                //                 document.body.appendChild(image5);
+                                                //                 body.appendChild(fakebtn);
+                                                //                 body.appendChild(realbtn);
+
+                                                //                 fakebtn.addEventListener ("click", function() {
+                                                //                 exitGame(body, image5, fakebtn, realbtn)
+                                                //                 //exitgame
+                                                //                 })
+
+
+
+                                                //                 realbtn.addEventListener ("click", function() {
+                                                //                  body.removeChild(image5);
+                                                //                  body.removeChild(fakebtn);
+                                                //                  body.removeChild(realbtn);
+
+                                                //                  if (correct.canPlayType("video/mp4")) {
+                                                //                      correct.setAttribute("src","correct.mp4");
+                                                //                      correct.setAttribute("autoplay","true");
+                                                //                      document.body.appendChild(correct);
+
+                                                //                      $('video').on('ended',function(){
+                                                //                         console.log('Video has ended!');
+                                                //                         correct.remove();
+
+
+                                                //                         })
+                                                //                      }
+                                                //                   })
+
+
+
+
+                                                //         })
+
+
+                                                    // }
+                                                })
+
+
+                                             }) 
+                                    }
+
+
+
+
+
+
+                                })
+
+
+
+                            })
+
+
+
+                        }
+
+                })
+
+
+
+
+
+
+
+
+                                //how can I put an if inside an if - especially when there is a wrong answer to q1// 
+        });
+
+                         } else {
+                            alert("error playing video");
+                         }
+                
+                });
+
+            realbtn.addEventListener ("click", function() {
+                  exitGame(body, obama,fakebtn,realbtn)
+
+            //      body.removeChild(imagea);
+            //      body.removeChild(fakebtn);
+            //      body.removeChild(realbtn);
+            //     var wrong = document.createElement("VIDEO");
+            // if (wrong.canPlayType("video/mp4")) {
+            //  wrong.setAttribute("src","wrong.mp4");
+            //  } else {
+            //  alert("error playing video");
+            //  }
+            // wrong.setAttribute("autoplay","true");
+            // document.body.appendChild(wrong);
+            // $('video').on('ended',function(){
+            //  console.log('Video has ended!');
+            //  wrong.remove();
+            //  });
+
+
+          });        
+
+
+                    
+    });
+            
+}
+);
+
+    function exitGame(body,image_src,fakebtn,realbtn) {
+                 body.removeChild(image_src);
+                 body.removeChild(fakebtn);
+                 body.removeChild(realbtn);
+                var wrong = document.createElement("VIDEO");
+            if (wrong.canPlayType("video/mp4")) {
+             wrong.setAttribute("src","gameover.mp4");
+             } else {
+             alert("error playing video");
+             }
+            wrong.setAttribute("autoplay","true");
+            document.body.appendChild(wrong);
+            $('video').on('ended',function(){
+             console.log('Video has ended!');
+             wrong.remove();
+             });
+
+
+    }
+
+
+
+
+		</script>
+		
+		 
+	</body>
+
+</html>
